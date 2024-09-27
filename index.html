@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="css/bootstrap-grid-min.css">
+      <!-- slick-slider -->
+      <link rel="preload" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <title>Home | Singhal Group Of Industries</title>
+   </head>
+   <body>
+      <div class="main">
+         <header class="header">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-lg-2">
+                     <div class="mb-header">
+                        <div class="logo">
+                           <a href="index.html">
+                           <img src="images/singhal-wh.png" alt="Singhal Group Of Industries " class="img-fluid">
+                           </a>
+                        </div>
+                        <div class="header-main">
+                           <div class="open-nav-menu"> <span></span> </div>
+                           <div class="menu-overlay"> </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <!-- navigation menu start -->
+                     <nav class="nav-menu">
+                        <div class="close-nav-menu"> <img src="images/close.svg" alt="close"> </div>
+                        <ul class="menu">
+                           <li class="menu-item menu-item-has-children">
+                              <a data-toggle="sub-menu" href="services.html">About Us <i class="plus"></i>
+                              </a>
+                              <ul class="sub-menu">
+                                 <li class="menu-item"> <a href="print.html" class="">Who we are</a></li>
+                                 <li class="menu-item"> <a href="media.html" class="">What we do</a></li>
+                                 <li class="menu-item"> <a href="digital.html" class="">team</a></li>
+                                 <li class="menu-item"> <a href="celebrity-endorsements.html" class="">Vision & CSR</a></li>
+                                 <li class="menu-item"> <a href="sports-marketing.html" class="">Client/ Awards</a></li>
+                              </ul>
+                           </li>
+                           <li class="menu-item menu-item-has-children">
+                              <a data-toggle="sub-menu" href="services.html">Products <i class="plus"></i>
+                              </a>
+                              <ul class="sub-menu">
+                                 <li class="menu-item"> <a href="print.html" class="">TMT Bars</a></li>
+                                 <li class="menu-item"> <a href="media.html" class="">HB Wire</a></li>
+                                 <li class="menu-item"> <a href="digital.html" class="">MS Pipes</a></li>
+                                 <li class="menu-item"> <a href="celebrity-endorsements.html" class="">Sponge</a></li>
+                                 <li class="menu-item"> <a href="sports-marketing.html" class="">Power</a></li>
+                                 <li class="menu-item"> <a href="adfilm-production.html" class="">Billets</a></li>
+                                 <li class="menu-item"> <a href="creative.html" class="">Wire Rods</a></li>
+                                 <li class="menu-item"> <a href="creative.html" class="">MS Strips</a></li>
+                                 <li class="menu-item"> <a href="creative.html" class="">Ferrow Alloys</a></li>
+                              </ul>
+                           </li>
+                           <li class="menu-item "> <a href="career.html">Blogs </a>
+                           <li class="menu-item "> <a href="career.html">Contact us </a>
+                           </li>
+                        </ul>
+                     </nav>
+                     <!-- navigation menu end --> 
+                  </div>
+                  <div class="col-lg-4">
+                     <div class="get-quote">
+                        <!-- custom search functionality -->
+                        <div class="search-cs-nk">
+                           <div class="bg-white bg-white border-t border-b border-greyBorder-light absolute top-full left-0 w-full py-4 px-2.5 relative md:border-0 md:bg-transparent md:p-0 md:relative md:top-0 md:w-80 md:ml-auto md:mr-7 lg:mr-12 lg:w-96" id="search-content">
+                              <div id="animatedSearch" class="animatedSrch rounded cursor-pointer absolute h-11 bg-white z-10 pl-3 pr-2 flex items-center" style="display: flex;">
+                                 <div id="asfield" class="inline-block text-black align-middle whitespace-nowrap overflow-hidden"></div>
+                                 <div id="ascursor" class="inline-block h-8 bg-black align-middle w-0.5" style="display: inline-block;"></div>
+                              </div>
+                              <div class="text-black" x-data="initMiniSearch()">
+                                 <form class="form minisearch relative" id="search_mini_form" x-ref="form" @submit.prevent="search()" action="https://kicksandcrawl.com/search?" method="get">
+                                    <label class="hidden" for="search" data-role="minisearch-label"><span>Search</span></label> <input id="search" x-ref="searchInput" type="search" autocomplete="off" name="q" placeholder="Search&#x20;all&#x20;products" maxlength="128" class="border border-greyBorder-light w-full pl-3 pr-2 py-2.5 search-height text-black text-sm leading-normal transition appearance-none rounded md:text-base focus:outline-none focus:ring-0 focus:border focus:border-greyBorder-light" @focus.once="suggest" @input.debounce.300="suggest" @keydown.arrow-down.prevent="focusElement($el.querySelector('[tabindex]'))">
+                                    <template x-if="suggestions.length > 0">
+                                       <div class="bg-white rounded p-4 w-full absolute top-full leading-normal transition appearance-none flex flex-col mt-1 z-10 hidden">
+                                          <template x-for="suggestion in suggestions"><div class="flex justify-between p-2 text-grey-dark text-sm bg-container-lighter even:bg-container mb-1 cursor-pointer border border-container hover:bg-container-darker" tabindex="0" @click="search(suggestion.title)" @keydown.enter="search(suggestion.title)" @keydown.arrow-up.prevent=" focusElement($event.target.previousElementSibling) || $refs.searchInput.focus() " @keydown.arrow-down.prevent="focusElement($event.target.nextElementSibling)"><span x-text="suggestion.title"></span> <span x-text="suggestion.num_results"></span>
+                                       </div>
+                                       </template>
+                              </div>
+                              </template> <button type="submit" title="Search" class="action search bg-sky-dark rounded flex items-center justify-center h-full w-14 absolute right-0 top-0" aria-label="Search"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 20 20"><path fill="#ffffff" d="M18.869 19.162l-5.943-6.484c1.339-1.401 2.075-3.233 2.075-5.178 0-2.003-0.78-3.887-2.197-5.303s-3.3-2.197-5.303-2.197-3.887 0.78-5.303 2.197-2.197 3.3-2.197 5.303 0.78 3.887 2.197 5.303 3.3 2.197 5.303 2.197c1.726 0 3.362-0.579 4.688-1.645l5.943 6.483c0.099 0.108 0.233 0.162 0.369 0.162 0.121 0 0.242-0.043 0.338-0.131 0.204-0.187 0.217-0.503 0.031-0.706zM1 7.5c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5-2.916 6.5-6.5 6.5-6.5-2.916-6.5-6.5z"></path></svg><span class="hidden">Search</span></button> </form> 
+                              <div id="popupdiv" class="bg-white border-container rounded pb-2 absolute top-full w-full z-10 transition" style="display: none;">
+                                 <div class="text-black text-xss font-bold leading-5 md:text-smm trending-nk">Trending Searches</div>
+                                 <div id="closepopupdiv" class="cursor-pointer absolute right-2 top-1 text-black">
+                                    <svg class="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                    </svg>
+                                 </div>
+                                 <div class="flex flex-wrap ptrendLinks"> <a class="border border-sky text-sky text-xss leading-4 font-medium py-1.5 px-3 mr-2 mb-2 rounded hover:bg-sky hover:text-white" href="https://kicksandcrawl.com/search?type=product&options[prefix]=last&q=socks*">Baby Socks </a> <a class="border border-sky text-sky text-xss leading-4 font-medium py-1.5 px-3 mr-2 mb-2 rounded hover:bg-sky hover:text-white" href="https://kicksandcrawl.com/search?type=product&options[prefix]=last&q=apparels*"> Baby Apparels </a> <a class="border border-sky text-sky text-xss leading-4 font-medium py-1.5 px-3 mr-2 mb-2 rounded hover:bg-sky hover:text-white" href="https://kicksandcrawl.com/search?type=product&options%5Bprefix%5D=last&q=teether"> Teether </a> <a class="border border-sky text-sky text-xss leading-4 font-medium py-1.5 px-3 mr-2 mb-2 rounded hover:bg-sky hover:text-white" href="https://kicksandcrawl.com/search?type=product&options%5Bprefix%5D=last&q=carry+nest"> Carry Nest </a> <a class="border border-sky text-sky text-xss leading-4 font-medium py-1.5 px-3 mr-2 mb-2 rounded hover:bg-sky hover:text-white" href="https://kicksandcrawl.com/search?type=product&options%5Bprefix%5D=last&q=blankets"> Blankets </a> <a class="border border-sky text-sky text-xss leading-4 font-medium py-1.5 px-3 mr-2 mb-2 rounded hover:bg-sky hover:text-white" href="https://kicksandcrawl.com/search?type=product&options%5Bprefix%5D=last&q=bottle+feeder"> Bottle Feeder </a> <a class="border border-sky text-sky text-xss leading-4 font-medium py-1.5 px-3 mr-2 mb-2 rounded hover:bg-sky hover:text-white" href="https://kicksandcrawl.com/search?type=product&options%5Bprefix%5D=last&q=swaddles"> Swaddles </a> <a class="border border-sky text-sky text-xss leading-4 font-medium py-1.5 px-3 mr-2 mb-2 rounded hover:bg-sky hover:text-white" href="https://kicksandcrawl.com/search?type=product&options%5Bprefix%5D=last&q=sleep+nest"> Sleep Nest </a> <a class="border border-sky text-sky text-xss leading-4 font-medium py-1.5 px-3 mr-2 mb-2 rounded hover:bg-sky hover:text-white" href="https://kicksandcrawl.com/search?type=product&options%5Bprefix%5D=last&q=hair+accessories"> Hair Accessories </a> </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- custom searh functionality -->
+                     <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                           <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                           <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"></path>
+                        </svg>
+                     </div>
+                     <div class="quote-form" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <a href="contact.html">
+                        <span>Get Quote  </span>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+      </div>
+      </header>
+      <div class="hero-section">
+         <img src="https://fabrica.ancorathemes.com/wp-content/uploads/2023/02/108_3-1-copyright.jpg" alt="first-section" class="img-fluid">
+         <div class="hero-content">
+            <div class="container">
+               <div class="hero-content-head">
+                  <h1>Use of Advanced <br>
+                     Technology for Pr.
+                  </h1>
+                  <div class="hero-content-para">
+                     <img src="images/down-arrow.png" alt="" class="img-fluid">
+                     <p>
+                        Singhal Group of Industries was established in 2000 to bridge the gap between the supply and demand 
+                     </p>
+                  </div>
+                  <div class="cm-btn">
+                     <a href="#">
+                     About us
+                     </a>  
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="counterup"></div>
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-lg-3">
+               <div class="counter-bx">
+                  <div class="counter">
+                     <span>40 +</span>
+                  </div>
+                  <div class="counetr-text-head">
+                     <h2>Premium Quality
+                     </h2>
+                     <p>Lorem ipsum dolor sit vivid amet, elit.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-3">
+               <div class="counter-bx">
+                  <div class="counter">
+                     <span>140 +</span>
+                  </div>
+                  <div class="counetr-text-head">
+                     <h2>Approved Expansion
+                     </h2>
+                     <p>Lorem ipsum dolor sit vivid amet, elit.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-3">
+               <div class="counter-bx">
+                  <div class="counter">
+                     <span>120 +</span>
+                  </div>
+                  <div class="counetr-text-head">
+                     <h2>Diversified
+                        Product 
+                     </h2>
+                     <p>Lorem ipsum dolor sit vivid amet, elit.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-3">
+               <div class="counter-bx">
+                  <div class="counter">
+                     <span>500 +</span>
+                  </div>
+                  <div class="counetr-text-head">
+                     <h2>
+                        Efficient Production
+                     </h2>
+                     <p>Lorem ipsum dolor sit vivid amet, elit.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      </div>
+      <div class="cs-sldier">
+         <div class="container-fluid">
+            <div class="cs-sliders">
+               <div class="cs-slides">
+                  <div class="cs-slides-wrap">
+                     <div class="cs-slides-wrap-img">
+                        <img src="https://fabrica.ancorathemes.com/wp-content/uploads/2022/06/image-11-copyright-890x664.jpg" class="img-fluid" alt="">
+                     </div>
+                     <div class="cs-slides-content">
+                        <h2>Premium Quality
+                           Products
+                        </h2>
+                        <a class="read-more" href="read-more">
+                           Read More 
+                           <span>
+                              <svg class="qodef-svg--button-arrow" xmlns="http://www.w3.org/2000/svg" width="17.65" height="13.1" viewBox="0 0 17.65 13.1">
+                                 <path d="m11.75 13.1-1.275-1.275L14.1 8.2l.85-.575-.1-.3-1.025.125H0V5.625h13.825l1.025.15.1-.3-.85-.575-3.625-3.625L11.75 0l5.9 5.9v1.3Z"></path>
+                                 <path d="m11.75 13.1-1.275-1.275L14.1 8.2l.85-.575-.1-.3-1.025.125H0V5.625h13.825l1.025.15.1-.3-.85-.575-3.625-3.625L11.75 0l5.9 5.9v1.3Z"></path>
+                              </svg>
+                           </span>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+               <div class="cs-slides">
+                  <div class="cs-slides-wrap">
+                     <div class="cs-slides-wrap-img">
+                        <img src="https://manufaktursolutions.qodeinteractive.com/wp-content/uploads/2022/10/Main-home-banner-02.jpg" class="img-fluid" alt="">
+                     </div>
+                     <div class="cs-slides-content">
+                        <h2>Premium Quality
+                           Products
+                        </h2>
+                        <a class="read-more" href="read-more">
+                           Read More 
+                           <span>
+                              <svg class="qodef-svg--button-arrow" xmlns="http://www.w3.org/2000/svg" width="17.65" height="13.1" viewBox="0 0 17.65 13.1">
+                                 <path d="m11.75 13.1-1.275-1.275L14.1 8.2l.85-.575-.1-.3-1.025.125H0V5.625h13.825l1.025.15.1-.3-.85-.575-3.625-3.625L11.75 0l5.9 5.9v1.3Z"></path>
+                                 <path d="m11.75 13.1-1.275-1.275L14.1 8.2l.85-.575-.1-.3-1.025.125H0V5.625h13.825l1.025.15.1-.3-.85-.575-3.625-3.625L11.75 0l5.9 5.9v1.3Z"></path>
+                              </svg>
+                           </span>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+               <div class="cs-slides">
+                  <div class="cs-slides-wrap">
+                     <div class="cs-slides-wrap-img">
+                        <img src="https://manufaktursolutions.qodeinteractive.com/wp-content/uploads/2022/10/main-home-image-01.jpg" class="img-fluid" alt="">
+                     </div>
+                     <div class="cs-slides-content">
+                        <h2>Premium Quality
+                           Products
+                        </h2>
+                        <a class="read-more" href="read-more">
+                           Read More 
+                           <span>
+                              <svg class="qodef-svg--button-arrow" xmlns="http://www.w3.org/2000/svg" width="17.65" height="13.1" viewBox="0 0 17.65 13.1">
+                                 <path d="m11.75 13.1-1.275-1.275L14.1 8.2l.85-.575-.1-.3-1.025.125H0V5.625h13.825l1.025.15.1-.3-.85-.575-3.625-3.625L11.75 0l5.9 5.9v1.3Z"></path>
+                                 <path d="m11.75 13.1-1.275-1.275L14.1 8.2l.85-.575-.1-.3-1.025.125H0V5.625h13.825l1.025.15.1-.3-.85-.575-3.625-3.625L11.75 0l5.9 5.9v1.3Z"></path>
+                              </svg>
+                           </span>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+               <div class="cs-slides">
+                  <div class="cs-slides-wrap">
+                     <div class="cs-slides-wrap-img">
+                        <img src="https://manufaktursolutions.qodeinteractive.com/wp-content/uploads/2022/10/main-home-image-03.jpg" class="img-fluid" alt="">
+                     </div>
+                     <div class="cs-slides-content">
+                        <h2>Premium Quality
+                           Products
+                        </h2>
+                        <a class="read-more" href="read-more">
+                           Read More 
+                           <span>
+                              <svg class="qodef-svg--button-arrow" xmlns="http://www.w3.org/2000/svg" width="17.65" height="13.1" viewBox="0 0 17.65 13.1">
+                                 <path d="m11.75 13.1-1.275-1.275L14.1 8.2l.85-.575-.1-.3-1.025.125H0V5.625h13.825l1.025.15.1-.3-.85-.575-3.625-3.625L11.75 0l5.9 5.9v1.3Z"></path>
+                                 <path d="m11.75 13.1-1.275-1.275L14.1 8.2l.85-.575-.1-.3-1.025.125H0V5.625h13.825l1.025.15.1-.3-.85-.575-3.625-3.625L11.75 0l5.9 5.9v1.3Z"></path>
+                              </svg>
+                           </span>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            
+            </div>
+         </div>
+      </div>
+
+
+      <div class="about-us">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="about-ig"> 
+                     <img src="https://fabrica.ancorathemes.com/wp-content/uploads/elementor/thumbs/image-57-copyright-qsd05ifs15xtzy9fc6ohnbk9kqn0n5z8q8usl4agpg.jpg" class="img-fluid" alt="">
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="about-txt">
+                     <div class="about-txt-sm">
+                        <span>your production</span>
+                        <h2>Comfort & style for <br> every space</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
+                        </p>
+                     </div>
+                     <div class="about-pointers">
+                        <div class="about-flex">
+                           <div class="about-no">
+                              <span>01.</span>
+                           </div>
+                           <div class="about-notext">
+                              <h2>Advanced hardworking</h2>
+                           </div>
+                        </div>
+                        <div class="about-flex">
+                           <div class="about-no">
+                              <span>01.</span>
+                           </div>
+                           <div class="about-notext">
+                              <h2>Advanced hardworking</h2>
+                           </div>
+                        </div>
+                        <div class="about-flex">
+                           <div class="about-no">
+                              <span>01.</span>
+                           </div>
+                           <div class="about-notext">
+                              <h2>Advanced hardworking</h2>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="cm-btn">
+                        <a href="#">
+                        About us
+                        </a>  
+                     </div>
+                   
+                  </div>
+                 
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="usp-points">
+         <div class="a-section">
+            <div class="a-section-marquee-box">
+               <h2 class="marquee-text">Discipline <span></span>Sustainability <span></span>Trust <span></span></span>Discipline<span></span>Sustainability <span></span>Trust <span></span> Sustainability<span></span></h2>
+               <h2 class="marquee-text">Discipline <span></span>Sustainability <span></span>Trust <span></span></span>Discipline<span></span>Sustainability <span></span>Trust <span></span> Sustainability <span></span></h2>
+            </div>
+         </div>
+      </div>
+
+
+
+      <div class="product-sl">
+         <div class="container">
+            <div class="cm-str-head">
+               <span class="cm-str-head-sm">Quality</span>
+               <h2 class="cm-str-head-bm">
+                  our product ,<br> our creation 
+               </h2>
+               <div class="cm-btn">
+                  <a href="#">
+                  View More
+                  </a>  
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6" id="leftpr">
+                  <div class="rl">
+                     <div class="prsl">
+                        <img src="https://manufaktursolutions.qodeinteractive.com/wp-content/uploads/2022/10/p-l-img-1.jpg" alt="" class="img-fluid">
+                        <div class="prsl-content">
+                           <h2>projects with <br>manipulation structure</h2>
+                           <p>Company | Lead</p>
+                        </div>
+                     </div>
+                     <div class="prsl">
+                        <img src="https://manufaktursolutions.qodeinteractive.com/wp-content/uploads/2022/10/p-l-img-2.jpg" alt="" class="img-fluid">
+                        <div class="prsl-content">
+                           <h2>projects with <br>manipulation structure</h2>
+                           <p>Company | Lead</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-6" id="rightpr">
+                  <div class="rl">
+                     <div class="prsl">
+                        <img src="https://manufaktursolutions.qodeinteractive.com/wp-content/uploads/2022/02/p-l-img-3.jpg" alt="" class="img-fluid">
+                        <div class="prsl-content">
+                           <h2>projects with <br>manipulation structure</h2>
+                           <p>Company | Lead</p>
+                        </div>
+                     </div>
+                     <div class="prsl">
+                        <img src="https://manufaktursolutions.qodeinteractive.com/wp-content/uploads/2022/10/p-l-img-4.jpg" alt="" class="img-fluid">
+                        <div class="prsl-content">
+                           <h2>projects with <br>manipulation structure</h2>
+                           <p>Company | Lead</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="product-module">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="cm-str-head">
+                     <span class="cm-str-head-sm">Quality</span>
+                     <h2 class="cm-str-head-bm">
+                        Why Choose Us
+                     </h2>
+                     <div class="cm-btn">
+                        <a href="#">
+                        View More
+                        </a>  
+                     </div>
+                  </div>
+                  <div class="modull">
+                     <img src="https://fabrica.ancorathemes.com/wp-content/uploads/2023/01/decoration-back-main-2.png" alt="" class="img-fluid">
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="pr-list">
+                     <div class="pr-module-head">
+                        <h2>Power Generation</h2>
+                        <p>Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a class="read-more" href="read-more" tabindex="0">
+                           Read More 
+                           <span>
+                              <svg class="qodef-svg--button-arrow" xmlns="http://www.w3.org/2000/svg" width="17.65" height="13.1" viewBox="0 0 17.65 13.1">
+                                 <path d="m11.75 13.1-1.275-1.275L14.1 8.2l.85-.575-.1-.3-1.025.125H0V5.625h13.825l1.025.15.1-.3-.85-.575-3.625-3.625L11.75 0l5.9 5.9v1.3Z"></path>
+                                 <path d="m11.75 13.1-1.275-1.275L14.1 8.2l.85-.575-.1-.3-1.025.125H0V5.625h13.825l1.025.15.1-.3-.85-.575-3.625-3.625L11.75 0l5.9 5.9v1.3Z"></path>
+                              </svg>
+                           </span>
+                        </a>
+                     </div>
+                     <div class="pr-module-head">
+                        <h2>Power Generation</h2>
+                        <p>Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a class="read-more" href="read-more" tabindex="0">
+                           Read More 
+                           <span>
+                              <svg class="qodef-svg--button-arrow" xmlns="http://www.w3.org/2000/svg" width="17.65" height="13.1" viewBox="0 0 17.65 13.1">
+                                 <path d="m11.75 13.1-1.275-1.275L14.1 8.2l.85-.575-.1-.3-1.025.125H0V5.625h13.825l1.025.15.1-.3-.85-.575-3.625-3.625L11.75 0l5.9 5.9v1.3Z"></path>
+                                 <path d="m11.75 13.1-1.275-1.275L14.1 8.2l.85-.575-.1-.3-1.025.125H0V5.625h13.825l1.025.15.1-.3-.85-.575-3.625-3.625L11.75 0l5.9 5.9v1.3Z"></path>
+                              </svg>
+                           </span>
+                        </a>
+                     </div>
+                     <div class="pr-module-head">
+                        <h2>Power Generation</h2>
+                        <p>Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a class="read-more" href="read-more" tabindex="0">
+                           Read More 
+                           <span>
+                              <svg class="qodef-svg--button-arrow" xmlns="http://www.w3.org/2000/svg" width="17.65" height="13.1" viewBox="0 0 17.65 13.1">
+                                 <path d="m11.75 13.1-1.275-1.275L14.1 8.2l.85-.575-.1-.3-1.025.125H0V5.625h13.825l1.025.15.1-.3-.85-.575-3.625-3.625L11.75 0l5.9 5.9v1.3Z"></path>
+                                 <path d="m11.75 13.1-1.275-1.275L14.1 8.2l.85-.575-.1-.3-1.025.125H0V5.625h13.825l1.025.15.1-.3-.85-.575-3.625-3.625L11.75 0l5.9 5.9v1.3Z"></path>
+                              </svg>
+                           </span>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="clients">
+         <div class="container-fluid">
+           <div class="swiper nkSwiper">
+             <div class="swiper-wrapper">
+               <div class="swiper-slide">
+                 <div class="siper-logos">
+                   <img src="https://manufaktursolutions.qodeinteractive.com/wp-content/uploads/2022/10/client-07.png" alt="">
+                 </div>
+               </div>
+               <div class="swiper-slide">
+                  <div class="siper-logos">
+                    <img src="https://manufaktursolutions.qodeinteractive.com/wp-content/uploads/2022/10/client-07.png" alt="">
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="siper-logos">
+                    <img src="https://manufaktursolutions.qodeinteractive.com/wp-content/uploads/2022/10/client-07.png" alt="">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="siper-logos">
+                    <img src="https://manufaktursolutions.qodeinteractive.com/wp-content/uploads/2022/10/client-07.png" alt="">
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="siper-logos">
+                    <img src="https://manufaktursolutions.qodeinteractive.com/wp-content/uploads/2022/10/client-07.png" alt="">
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="siper-logos">
+                    <img src="https://manufaktursolutions.qodeinteractive.com/wp-content/uploads/2022/10/client-07.png" alt="">
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="siper-logos">
+                    <img src="https://manufaktursolutions.qodeinteractive.com/wp-content/uploads/2022/10/client-07.png" alt="">
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="siper-logos">
+                    <img src="https://manufaktursolutions.qodeinteractive.com/wp-content/uploads/2022/10/client-07.png" alt="">
+                  </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                  <div class="siper-logos">
+                    <img src="https://manufaktursolutions.qodeinteractive.com/wp-content/uploads/2022/10/client-07.png" alt="">
+                  </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                  <div class="siper-logos">
+                    <img src="https://manufaktursolutions.qodeinteractive.com/wp-content/uploads/2022/10/client-07.png" alt="">
+                  </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                  <div class="siper-logos">
+                    <img src="https://manufaktursolutions.qodeinteractive.com/wp-content/uploads/2022/10/client-07.png" alt="">
+                  </div>
+                </div>
+       
+             </div>
+             <div class="swiper-pagination"></div>
+           </div>
+         </div>
+       </div>
+    <footer>
+      <div class="container">
+         <div class="row">
+            <div class="ft-head">
+               <div class="ft-headd">
+               <h2>Let's optimize your supply chain
+               </h2>
+            </div>
+            <div class="ft-hradd-btn">
+               <div class="cm-btn">
+                  <a href="#">
+                  Contact
+                  </a>  
+               </div>
+            </div>
+               
+            </div>
+            <div class="ft-ulsl">
+               <div class="row">
+               <div class="col-lg-3">
+                  <div class="ft-img-tp">
+                     <img src="images/singhal-wh.png" alt="">
+                  </div>
+                  <div class="ft-img-para">
+                     <p>Singhal Group of Industries was established in 2000 to bridge the gap between the supply and demand of Sponge Iron & Steel. Our goal is to become a leading manufacturer in the steel-making industry.  </p>
+                  </div>
+               </div>
+
+
+                  <div class="col-lg-3" id="ft-se">
+                     <div class="ft-links">
+                        <h3>Services</h3>
+                        <div class="ft-li">
+                           <ul>
+                           <li>
+                              <a href="">Machinery</a>
+                           </li>
+                           <li>
+                              <a href="">Industry</a>
+                           </li>
+                           <li>
+                              <a href="">Machinery</a>
+                           </li>
+                           <li>
+                              <a href="">Industry</a>
+                           </li>
+                           <li>
+                              <a href="">Machinery</a>
+                           </li>
+                           <li>
+                              <a href="">Industry</a>
+                           </li>
+
+                           <li>
+                              <a href="">Machinery</a>
+                           </li>
+                        </ul>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="col-lg-3" id="ft-te">
+                     <div class="ft-links">
+                        <h3>Company</h3>
+                        <div class="ft-li">
+                           <ul>
+                           <li>
+                              <a href="">About us</a>
+                           </li>
+                           <li>
+                              <a href="">Product</a>
+                           </li>
+                        
+                           <li>
+                              <a href="">Projects</a>
+                           </li>
+                           <li>
+                              <a href="">CSR</a>
+                           </li>
+                           <li>
+                              <a href="">Blogs</a>
+                           </li>
+
+                           <li>
+                              <a href="">FAQ</a>
+                           </li>
+                           <li>
+                              <a href="">Contact</a>
+                           </li>
+                        </ul>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="col-lg-3">
+                     <div class="ft-links">
+                        <h3>Email</h3>
+                      <div class="frop">
+                        <a href="#">
+                           info@singhalsteel.com</a>
+                      </div>
+                     </div>
+
+                     <div class="ft-links">
+                        <h3>Phone</h3>
+                      <div class="frop">
+                        <a href="#">
+                           0771 - 2443238 / 28   
+                        </a>
+                      </div>
+                     </div>
+                     <div class="ft-links">
+                        <h3>Connect</h3>
+                        <div class="ft-social">
+                           <div class="social-icons">
+                             <a href="#" target="_blank">
+                               <svg height="16" preserveAspectRatio="xMidYMid meet" version="1.0" viewBox="0 0 512.000000 512.000000" width="16" fill="currentColor"  xmlns="http://www.w3.org/2000/svg">
+                                 <g stroke="none" transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)">
+                                   <path d="M2980 5106 c-288 -45 -490 -143 -656 -318 -140 -148 -227 -321 -276
+                                 -548 -19 -86 -21 -138 -25 -542 l-4 -448 -395 0 -394 0 0 -455 0 -455 393 -2
+                                 392 -3 3 -1167 2 -1168 470 0 470 0 0 1170 0 1170 390 0 c215 0 390 1 390 3
+                                 27 182 116 894 113 900 -2 4 -204 7 -449 7 l-445 0 3 373 c3 364 4 373 27 431
+                                 47 117 145 187 293 206 40 5 193 10 341 10 l267 0 -2 408 -3 407 -130 12
+                               c-213 19 -675 25 -775 9z"></path>
+                                 </g>
+                               </svg>
+                             </a>
+                           </div>
+                           <div class="social-icons">
+                             <a href="#" target="_blank">
+                               <svg class="bi bi-instagram" height="16" viewBox="0 0 16 16" width="16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+                               </svg>
+                             </a>
+                           </div>
+                           <div class="social-icons">
+                             <a href="#" target="_blank">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                                 <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"></path>
+                               </svg>
+                             </a>
+                           </div>
+                           <div class="social-icons">
+                             <a href="#" target="_blank">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"/></svg>
+                             </a>
+                           </div>
+                         </div>
+                     </div>
+                  </div>
+
+
+
+
+               </div>
+            </div>
+            <div class="copyright">
+               <div class="cpr-left">
+            <p>Copyright © 2024 Singhal Group Of Industries, all rights reserved</p>   
+            </div>
+         <div class="cpr-rt">
+            <div class="ft-ig">
+               <img src="https://www.singhalsteel.com/wp-content/uploads/2023/04/MicrosoftTeams-image-19-300x158.jpg" alt="">
+            </div>
+            <div class="ft-ig">
+               <img src="https://www.singhalsteel.com/wp-content/uploads/2023/04/MicrosoftTeams-image-20-300x158.jpg" alt="">
+            </div>
+            <div class="ft-ig">
+               <img src="https://www.singhalsteel.com/wp-content/uploads/2023/04/MicrosoftTeams-image-18-300x158.jpg" alt="">
+            </div>
+         </div>
+         </div>
+      </div>
+    </footer>
+
+    <a id="back-to-top" href="#" >
+      <span id="back-to-top-hover"></span>
+      <span class="back-to-top-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z"></path></svg>
+  
+      </span>
+  </a>
+      </div>
+   
+      
+      <!-- Optional JavaScript; choose one of the two! -->
+      <!-- Option 2: Separate Popper and Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js" ></script>   
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    
+      <script src="js/custom.js"></script>
+
+<script>
+     var swiper = new Swiper(".nkSwiper", {
+    slidesPerView: 7,
+    pagination: {
+        clickable: true,
+    },
+    loop: true,
+    speed: 1000,
+    autoplay: {
+        delay: 1000,
+        disableOnInteraction: false,
+    },
+    breakpoints: {
+        // when window width is <= 767px
+        767: {
+            slidesPerView: 3,
+        }
+    }
+});
+</script>
+      
+   </body>
+</html>
